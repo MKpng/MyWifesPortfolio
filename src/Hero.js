@@ -459,9 +459,9 @@ function Hero() {
         <header className="hero" id="home" ref={transictionOne}>
           <div className="sticky-hero">
             <div className="logo">
-              <a onClick={() => window.location.reload()}>
+              <button onClick={() => window.location.reload()}>
                 <img src={logo} alt=""></img>
-              </a>
+              </button>
             </div>
             <div className="line-header">
               <img src={line} alt=""></img>
@@ -499,9 +499,9 @@ function Hero() {
             <div className="left-side">
               <nav>
                 <ul>
-                  <a onClick={() => window.location.reload()}>
+                  <button onClick={() => window.location.reload()}>
                     <img src={logo} alt=""></img>
-                  </a>
+                  </button>
                   <a href="#about">
                     <li>ABOUT ME</li>
                   </a>
@@ -590,9 +590,9 @@ function Hero() {
           <div className="work-section" id="work" ref={work}>
             <div className="sticky">
               <div className="logo">
-                <a onClick={() => window.location.reload()}>
+                <button onClick={() => window.location.reload()}>
                   <img src={logo} alt=""></img>
-                </a>
+                </button>
               </div>
               <div className="line-work">
                 <img src={line} alt=""></img>
@@ -727,7 +727,7 @@ function Hero() {
             </a>
           </div>
           <div className="logo-footer">
-            <a onClick={() => window.location.reload()}>
+            <button onClick={() => window.location.reload()}>
               <svg
                 width="265"
                 height="265"
@@ -780,7 +780,7 @@ function Hero() {
                   fill="#20492F"
                 />
               </svg>
-            </a>
+            </button>
           </div>
         </footer>
       </div>

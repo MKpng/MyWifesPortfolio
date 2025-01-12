@@ -240,9 +240,9 @@ function Mobile() {
       </div>
       <div className="fixed-header">
         <div className="logo-mobile">
-          <a onClick={() => window.location.reload()} aria-label="Reload Page">
+          <button onClick={() => window.location.reload()} aria-label="Reload Page">
             <img src={logo} alt="Company Logo" />
-          </a>
+          </button>
         </div>
 
         <button

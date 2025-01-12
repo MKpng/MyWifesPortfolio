@@ -107,7 +107,6 @@
 .logo img {
     width: clamp(3vw, 5vw, 7vw);
     aspect-ratio: 1/1;
-    animation: spin 5s linear infinite;
 }
 
 .logo img:hover {
@@ -270,11 +269,9 @@ li:hover {
 .about nav ul a:nth-child(1) img {
     margin-right: 2vw;
     margin-top: 1.5vh;
-    animation: spin 5s linear infinite;
 }
 
 .about nav ul a:nth-child(1) img:hover {
-    animation: reverse-spin 5s linear infinite;
     cursor: url("./images/flower-click.svg") 10 10, auto;
 }
 
@@ -682,6 +679,11 @@ footer {
     bottom: 5%;
     right: 5%;
     z-index: 10;
+}
+
+button {
+    background: transparent;
+    border: 0;
     animation: spin 5s linear infinite;
 }
 

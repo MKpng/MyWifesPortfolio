@@ -99,6 +99,7 @@
     padding: 0;
     pointer-events: all;
     z-index: 999;
+    animation: none;
 }
 
 .line {
@@ -152,7 +153,6 @@
 .logo-mobile img {
     width: clamp(4rem, 10vw, 8rem);
     aspect-ratio: 1/1;
-    animation: spin 5s linear infinite;
 }
 
 .side-menu {
