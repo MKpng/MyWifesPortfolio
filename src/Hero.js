@@ -1,4 +1,4 @@
-import React, { use, useEffect, useLayoutEffect, useRef } from "react";
+import React, { useEffect, useLayoutEffect, useRef } from "react";
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -452,7 +452,7 @@ function Hero() {
       <div id="smooth-content" ref={loader}>
         <div className="loader">
           <div className="logo-loader">
-            <img src={logo} id="loader-image"></img>
+            <img src={logo} id="loader-image" alt=""></img>
           </div>
         </div>
 
@@ -460,11 +460,11 @@ function Hero() {
           <div className="sticky-hero">
             <div className="logo">
               <a onClick={() => window.location.reload()}>
-                <img src={logo}></img>
+                <img src={logo} alt=""></img>
               </a>
             </div>
             <div className="line-header">
-              <img src={line}></img>
+              <img src={line} alt=""></img>
             </div>
             <nav>
               <ul>
@@ -489,7 +489,7 @@ function Hero() {
               </h1>
             </div>
             <div className="vamp">
-              <img src={vamp}></img>
+              <img src={vamp} alt=""></img>
             </div>{" "}
           </div>
         </header>
@@ -500,7 +500,7 @@ function Hero() {
               <nav>
                 <ul>
                   <a onClick={() => window.location.reload()}>
-                    <img src={logo}></img>
+                    <img src={logo} alt=""></img>
                   </a>
                   <a href="#about">
                     <li>ABOUT ME</li>
@@ -591,11 +591,11 @@ function Hero() {
             <div className="sticky">
               <div className="logo">
                 <a onClick={() => window.location.reload()}>
-                  <img src={logo}></img>
+                  <img src={logo} alt=""></img>
                 </a>
               </div>
               <div className="line-work">
-                <img src={line}></img>
+                <img src={line} alt=""></img>
               </div>
               <nav>
                 <ul>
@@ -617,48 +617,54 @@ function Hero() {
                   <a
                     href="https://www.behance.net/gallery/215978025/OCEAN-CLUB-TABULEIRO"
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    <img src={tabuleiro}></img>
+                    <img src={tabuleiro} alt=""></img>
                   </a>
                 </div>
                 <div className="work-no-two">
                   <a
                     href="https://www.behance.net/gallery/215976293/ATHARAX"
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    <img src={atharax}></img>
+                    <img src={atharax} alt=""></img>
                   </a>
                 </div>
                 <div className="work-no-three">
                   <a
                     href="https://www.behance.net/gallery/215975463/ESTEVES-CORRETORA"
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    <img src={esteves}></img>
+                    <img src={esteves} alt=""></img>
                   </a>
                 </div>
                 <div className="work-no-four">
                   <a
                     href="https://www.behance.net/gallery/199036633/ORGANICOS-HP"
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    <img src={house}></img>
+                    <img src={house} alt=""></img>
                   </a>
                 </div>
                 <div className="work-no-five">
                   <a
                     href="https://www.behance.net/gallery/215974969/ORGANICA"
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    <img src={organica}></img>
+                    <img src={organica} alt=""></img>
                   </a>
                 </div>
                 <div className="work-no-six">
                   <a
                     href="https://www.behance.net/gallery/197400193/ADS-POD-KOMBUCHA"
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    <img src={pod}></img>
+                    <img src={pod} alt=""></img>
                   </a>
                 </div>
               </div>
@@ -677,7 +683,7 @@ function Hero() {
             </h2>
           </div>
           <div className="socials">
-            <a href="https://www.behance.net/sarahdasilveira" target="_blank">
+            <a href="https://www.behance.net/sarahdasilveira" target="_blank" rel="noopener noreferrer">
               <div className="behance">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -700,6 +706,7 @@ function Hero() {
             <a
               href="https://www.linkedin.com/in/sarah-da-silveira/"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <div className="linkedin">
                 <svg

@@ -235,7 +235,7 @@ function Mobile() {
     <div id="smooth-wrapper">
       <div className="loader">
         <div className="logo-loader">
-          <img src={logo} id="loader-image"></img>
+          <img src={logo} id="loader-image" alt=""></img>
         </div>
       </div>
       <div className="fixed-header">
@@ -301,7 +301,7 @@ function Mobile() {
               </h1>
             </div>
             <div className="arrow-down">
-              <img src={arrowDown}></img>
+              <img src={arrowDown} alt=""></img>
             </div>
           </div>
         </header>
@@ -389,30 +389,34 @@ function Mobile() {
               <a
                 href="https://www.behance.net/gallery/215975463/ESTEVES-CORRETORA"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 <div className="work-list-one"></div>
               </a>
               <a
                 href="https://www.behance.net/gallery/215978025/OCEAN-CLUB-TABULEIRO"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 <div className="work-list-two"></div>
               </a>
               <a
                 href="https://www.behance.net/gallery/215976293/ATHARAX"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 <div className="work-list-three"></div>
               </a>
               <a
                 href="https://www.behance.net/gallery/199036633/ORGANICOS-HP"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 <div className="work-list-four"></div>
               </a>
             </div>
             <div className="work-more">
-              <a href="https://www.behance.net/sarahdasilveira" target="_blank">
+              <a href="https://www.behance.net/sarahdasilveira" target="_blank" rel="noopener noreferrer">
                 SEE MORE
               </a>
             </div>
@@ -429,7 +433,7 @@ function Mobile() {
               </h1>
             </div>
             <div className="socials-mobile">
-              <a href="https://www.behance.net/sarahdasilveira" target="_blank">
+              <a href="https://www.behance.net/sarahdasilveira" target="_blank" rel="noopener noreferrer">
                 <div className="behance-mobile">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -452,6 +456,7 @@ function Mobile() {
               <a
                 href="https://www.linkedin.com/in/sarah-da-silveira/"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 <div className="linkedin-mobile">
                   <svg
