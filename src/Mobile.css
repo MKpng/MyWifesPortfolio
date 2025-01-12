@@ -1,0 +1,633 @@
+:root {
+    --yellow: #ECB530;
+    --green: #20492F;
+    --rose: #E480B4;
+    --red: #DD3826;
+}
+
+@font-face {
+    font-family: "Ornable";
+    src: url("./fontes/Ornable.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Belkin Regular";
+    src: url("./fontes/Belkin-Regular.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Belkin Extra";
+    src: url("./fontes/Belkin-ExtraBold.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Belkin Light";
+    src: url("./fontes/Belkin-Light.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Belkin Medium";
+    src: url("./fontes/Belkin-Medium.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scrollbar-width: none;
+    cursor: url("./images/pointer.svg") 10 10, auto;
+}
+
+/*LOADER*/
+
+.loader {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    z-index: 1000;
+}
+
+.logo-loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.logo-loader img {
+    width: 15vw;
+    aspect-ratio: 1/1;
+    animation: spin 10s linear infinite;
+}
+
+/*LOADER FINISHES*/
+
+.fixed-header {
+    position: fixed;
+    top: 2.5%;
+    width: 75vw;
+    left: 12.5vw;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 999;
+}
+
+.menu {
+    margin-left: 2.5%;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    padding: 0;
+    pointer-events: all;
+    z-index: 999;
+}
+
+.line {
+    fill: none;
+    stroke: var(--rose);
+    stroke-width: 5;
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+        stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line1 {
+    stroke-dasharray: 60 207;
+    stroke-width: 5;
+}
+
+.line2 {
+    stroke-dasharray: 60 60;
+    stroke-width: 5;
+}
+
+.line3 {
+    stroke-dasharray: 60 207;
+    stroke-width: 5;
+}
+
+.opened .line1 {
+    stroke-dasharray: 90 207;
+    stroke-dashoffset: -134;
+    stroke-width: 5;
+    stroke: var(--red);
+}
+
+.opened .line2 {
+    stroke-dasharray: 1 60;
+    stroke-dashoffset: -30;
+    stroke-width: 5;
+    stroke: var(--red);
+}
+
+.opened .line3 {
+    stroke-dasharray: 90 207;
+    stroke-dashoffset: -134;
+    stroke-width: 5;
+    stroke: var(--red);
+}
+
+.logo-mobile {
+    margin-left: 2.5%;
+}
+
+.logo-mobile img {
+    width: clamp(4rem, 10vw, 8rem);
+    aspect-ratio: 1/1;
+    animation: spin 5s linear infinite;
+}
+
+.side-menu {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #f4f3f2;
+    display: none;
+    z-index: 998;
+    transition: all 0.3s ease-in-out;
+}
+
+.side-menu-list {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.side-menu-list a {
+    text-decoration: none;
+    font-size: 13vw;
+    font-family: "Ornable", sans-serif;
+    font-weight: 700;
+    margin: 1vh 0;
+    color: #000;
+}
+
+.side-menu.show {
+    display: block;
+}
+
+.hero {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("./images/sarah-pf-bg.webp");
+    background-repeat: repeat-y;
+    background-size: cover;
+}
+
+.sticky-hero {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("./images/sarah-pf-bg.webp");
+    background-repeat: repeat-y;
+    background-size: cover;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.hero nav ul {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 25vw;
+    top: 5%;
+    right: 22.5%;
+    z-index: 999;
+    font-family: "Ornable", sans-serif;
+    font-size: 1.5vw;
+    z-index: 1000;
+}
+
+nav ul a {
+    color: var(--rose);
+    text-decoration: none;
+    list-style-type: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.myName-mobile {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.myName-mobile h2 {
+    position: absolute;
+    font-family: "Ornable", sans-serif;
+    font-size: 50vh;
+    opacity: 0;
+}
+
+.myName-mobile h2:nth-child(1) {
+    position: absolute;
+    color: var(--yellow);
+    z-index: 5;
+}
+
+.myName-mobile h2:nth-child(2) {
+    position: absolute;
+    color: var(--green);
+    z-index: 4;
+    opacity: 0;
+}
+
+.myName-mobile h2:nth-child(3) {
+    position: absolute;
+    color: var(--rose);
+    z-index: 3;
+    opacity: 0;
+}
+
+.myName-mobile h2:nth-child(4) {
+    position: absolute;
+    color: var(--red);
+    z-index: 2;
+    opacity: 0;
+}
+
+.myName-mobile h2:nth-child(5) {
+    position: absolute;
+    color: var(--green);
+    z-index: 1;
+    opacity: 0;
+}
+
+.static-name {
+    position: absolute;
+    width: 100vw;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    font-family: "Ornable", sans-serif;
+    font-size: 10vw;
+    top: 65vh;
+}
+
+.static-name h1 span:nth-child(1) {
+    color: var(--yellow);
+}
+
+.static-name h1 span:nth-child(2),
+.static-name h1 span:nth-child(5) {
+    color: var(--green);
+}
+
+.static-name h1 span:nth-child(3) {
+    color: var(--rose);
+}
+
+.static-name h1 span:nth-child(4) {
+    color: var(--red);
+}
+
+.arrow-down {
+    position: absolute;
+    width: 10vw;
+    aspect-ratio: 1/1;
+    top: 85%;
+    left: 45vw;
+}
+
+/*ABOUT*/
+
+.about-mobile {
+    position: relative;
+    width: 100vw;
+    height: 600vh;
+    background-image: url("./images/sarah-pf-bg.webp");
+    background-repeat: repeat-y;
+    background-size: cover;
+}
+
+.about-sticky {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-image: url("./images/sarah-pf-bg.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-sticky img {
+    height: fit-content;
+    width: 80vw;
+    border-radius: 5vw;
+}
+
+.about-description-mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 20vh;
+    width: 100vw;
+    height: 60vh;
+    text-align: center;
+}
+
+.about-description-mobile p {
+    font-family: "Belkin Regular", sans-serif;
+    font-size: 8vw;
+    color: rgb(0, 0, 0);
+}
+
+.about-description-mobile p span:nth-child(1),
+.about-description-mobile p span:nth-child(2),
+.about-description-mobile p span:nth-child(3),
+.about-description-mobile p span:nth-child(4),
+.about-description-mobile p span:nth-child(5) {
+    color: var(--rose);
+    font-family: "Ornable", sans-serif;
+    font-size: 14vw;
+    line-height: 1;
+}
+
+.about-description-mobile p span:nth-child(2) {
+    color: var(--green);
+}
+
+.about-description-mobile p span:nth-child(3) {
+    color: var(--yellow);
+}
+
+.about-description-mobile p span:nth-child(4) {
+    color: var(--red);
+}
+
+.about-description-mobile p span:nth-child(5) {
+    color: var(--rose);
+}
+
+.one {
+    font-family: "Belkin Medium", sans-serif;
+}
+
+.two {
+    color: var(--green);
+}
+
+.three {
+    color: var(--red);
+}
+
+.four {
+    color: var(--yellow);
+}
+
+.five {
+    color: var(--rose);
+}
+
+.six {
+    font-family: "Belkin Extra", sans-serif;
+}
+
+.seven {
+    font-family: "Belkin Light", sans-serif;
+    text-decoration: line-through;
+}
+
+.eight {
+    font-family: "Belkin Medium", sans-serif;
+}
+
+.img-one-mobile {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.img-two-mobile {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.img-three-mobile {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.img-four-mobile {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.img-five-mobile {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.img-six-mobile {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+}
+
+/*WORK*/
+
+.work-mobile {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    background-image: url("./images/sarah-pf-bg.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 100vh;
+}
+
+.work-title {
+    position: absolute;
+    top: 15vh;
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.work-title p {
+    font-family: "Ornable", sans-serif;
+    font-size: 10vw;
+    line-height: .8;
+}
+
+.work-title span {
+    font-size: 6vw;
+    color: rgba(0, 0, 0, .7);
+    margin-left: 10vw;
+}
+
+.work-list {
+    position: absolute;
+    top: 30vh;
+    width: 100vw;
+    height: 45vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.work-list div {
+    width: 80vw;
+    height: 9vh;
+    background-color: var(--yellow);
+    border-radius: 3vw;
+}
+
+.work-list-one {
+    background-image: url("./images/esteves-SP.webp");
+    background-position: center;
+    background-size: cover;
+    border: 1vw solid var(--yellow);
+}
+
+.work-list-two {
+    background-image: url("./images/tabuleiro-SP.webp");
+    background-position: bottom;
+    background-size: cover;
+    border: 1vw solid var(--green);
+}
+
+.work-list-three {
+    background-image: url("./images/atharax-SP.webp");
+    background-position: 45% 50%;
+    background-size: 180%;
+    border: 1vw solid var(--rose);
+}
+
+.work-list-four {
+    background-image: url("./images/house-SP.webp");
+    background-position: 50% 70%;
+    background-size: cover;
+    border: 1vw solid var(--red);
+}
+
+.work-more {
+    position: absolute;
+    top: 80vh;
+    left: 35vw;
+    width: 30vw;
+    font-family: "Ornable", sans-serif;
+    font-size: 6vw;
+    text-align: center;
+}
+
+.work-more a {
+    text-decoration: none;
+    color: #000;
+}
+
+/*FOOTER*/
+
+.footer {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-image: url("./images/sarah-pf-bg.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 0vh;
+}
+
+.footer h1 {
+    position: absolute;
+    top: 15vh;
+    font-family: "Ornable", sans-serif;
+    font-size: 25vw;
+}
+
+.footer h1 span:nth-child(1) {
+    color: var(--yellow);
+    text-shadow: 0 0 5vw var(--yellow);
+}
+
+.footer h1 span:nth-child(2),
+.footer h1 span:nth-child(5) {
+    color: var(--green);
+    text-shadow: 0 0 5vw var(--green);
+}
+
+.footer h1 span:nth-child(3) {
+    color: var(--rose);
+    text-shadow: 0 0 5vw var(--rose);
+}
+
+.footer h1 span:nth-child(4) {
+    color: var(--red);
+    text-shadow: 0 0 5vw var(--red);
+}
+
+.socials-mobile {
+    position: absolute;
+    top: 50vh;
+    height: 25vh;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    font-family: "Ornable", sans-serif;
+}
+
+.behance-mobile,
+.linkedin-mobile {
+    width: 80vw;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--rose);
+    font-size: 13vw;
+    fill: var(--red);
+}
+
+.linkedin-mobile {
+    color: var(--green);
+    fill: var(--yellow);
+}

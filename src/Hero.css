@@ -1,0 +1,716 @@
+:root {
+    --yellow: #ECB530;
+    --green: #20492F;
+    --rose: #E480B4;
+    --red: #DD3826;
+}
+
+@font-face {
+    font-family: "Ornable";
+    src: url("./fontes/Ornable.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Belkin Regular";
+    src: url("./fontes/Belkin-Regular.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Belkin Extra";
+    src: url("./fontes/Belkin-ExtraBold.otf") format("opentype"); 
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Belkin Light";
+    src: url("./fontes/Belkin-Light.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Belkin Medium";
+    src: url("./fontes/Belkin-Medium.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scrollbar-width: none;
+    cursor: url("./images/pointer.svg") 10 10, auto;
+}
+
+/*LOADER*/
+
+.loader {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    z-index: 1000;
+}
+
+.logo-loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.logo-loader img {
+    width: 15vw;
+    aspect-ratio: 1/1;
+    animation: spin 10s linear infinite;
+}
+
+/*LOADER*/
+
+.hero {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("./images/sarah-pf-bg.webp");
+    background-repeat: repeat-y;
+    background-size: cover;
+}
+
+.sticky-hero {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("./images/sarah-pf-bg.webp");
+    background-repeat: repeat-y;
+    background-size: cover;
+}
+
+.logo {
+    position: absolute;
+    top: 2.5%;
+    left: 2.5%;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.logo img {
+    width: clamp(3vw, 5vw, 7vw);
+    aspect-ratio: 1/1;
+    animation: spin 5s linear infinite;
+}
+
+.logo img:hover {
+    animation: reverse-spin 5s linear infinite;
+    cursor: url("./images/flower-click.svg") 10 10, auto;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes reverse-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+.line-header {
+    position: absolute;
+    top: 5.5vh;
+    left: 12%;
+    width: 35vw;
+    z-index: 7;
+}
+
+.line-header img {
+    width: 35vw;
+}
+
+.hero nav ul {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 25vw;
+    top: 5%;
+    right: 22.5%;
+    z-index: 999;
+    font-family: "Ornable", sans-serif;
+    font-size: 1.5vw;
+    z-index: 1000;
+}
+
+nav ul a {
+    color: var(--rose);
+    text-decoration: none;
+    list-style-type: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.hero nav ul a:hover {
+    color: var(--green);
+    cursor: url("./images/flower-click.svg") 10 10, auto;
+}
+
+.myName {
+    position: absolute;
+    top: 2.5%;
+    left: 102%;
+    transform: rotate(90deg);
+    transform-origin: left;
+    height: 1vw;
+    z-index: 100;
+    cursor: default;
+}
+
+.myName h1 {
+    font-family: "Ornable", sans-serif;
+    font-size: 28vh;
+}
+
+.myName h1 span:nth-child(1) {
+    color: var(--yellow);
+    z-index: 5;
+}
+
+.myName h1 span:nth-child(2),
+.myName h1 span:nth-child(5) {
+    color: var(--green);
+    z-index: 4;
+}
+
+.myName h1 span:nth-child(3) {
+    color: var(--rose);
+    z-index: 3;
+}
+
+.myName h1 span:nth-child(4) {
+    color: var(--red);
+    z-index: 2;
+}
+
+.vamp {
+    position: absolute;
+    top: 0;
+    width: 80vw;
+    height: 100%;
+    z-index: 1;
+}
+
+.vamp img {
+    height: 100%;
+}
+
+/*ABOUT*/
+
+.about {
+    position: relative;
+    width: 100vw;
+    height: 300vh;
+    overflow: hidden;
+    background-image: url("./images/sarah-pf-bg.webp");
+    background-repeat: repeat-y;
+    background-size: cover;
+}
+
+.left-side {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 40vw;
+    height: 100vh;
+    z-index: 1;
+}
+
+.about nav ul {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 30vw;
+    top: 7.5vh;
+    z-index: 10;
+    font-family: "Ornable", sans-serif;
+    font-size: 1.5vw;
+}
+
+.about nav ul a {
+    color: var(--red);
+}
+
+.about nav ul a:hover {
+    color: var(--green);
+}
+
+li:hover {
+    cursor: url("./images/flower-click.svg") 10 10, auto;
+}
+
+.about nav ul a:nth-child(1) img {
+    margin-right: 2vw;
+    margin-top: 1.5vh;
+    animation: spin 5s linear infinite;
+}
+
+.about nav ul a:nth-child(1) img:hover {
+    animation: reverse-spin 5s linear infinite;
+    cursor: url("./images/flower-click.svg") 10 10, auto;
+}
+
+.about-description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 20vh;
+    width: 22.5vw;
+    height: 60vh;
+    margin-left: 6vw;
+    text-align: center;
+}
+
+.about-description p {
+    font-family: "Belkin Regular", sans-serif;
+    font-size: 2vw;
+    color: rgb(0, 0, 0);
+}
+
+.about-description p span:nth-child(1) {
+    color: var(--rose);
+    font-family: "Ornable", sans-serif;
+    font-size: 4vw;
+    line-height: 1;
+}
+
+.about-description p span:nth-child(2) {
+    color: var(--green);
+    font-family: "Ornable", sans-serif;
+    font-size: 4vw;
+    line-height: 1;
+}
+
+.about-description p span:nth-child(3) {
+    color: var(--yellow);
+    font-family: "Ornable", sans-serif;
+    font-size: 4vw;
+    line-height: 1;
+}
+
+.about-description p span:nth-child(4) {
+    color: var(--red);
+    font-family: "Ornable", sans-serif;
+    font-size: 4vw;
+    line-height: 1;
+}
+
+.about-description p span:nth-child(5) {
+    color: var(--rose);
+    font-family: "Ornable", sans-serif;
+    font-size: 4vw;
+    line-height: 1;
+}
+
+.one {
+    font-family: "Belkin Medium", sans-serif;
+}
+
+.two {
+    color: var(--green);
+}
+
+.three {
+    color: var(--red);
+}
+
+.four {
+    color: var(--yellow);
+}
+
+.five {
+    color: var(--rose);
+}
+
+.six {
+    font-family: "Belkin Extra", sans-serif;
+}
+
+.seven {
+    font-family: "Belkin Light", sans-serif;
+    text-decoration: line-through;
+}
+
+.eight {
+    font-family: "Belkin Medium", sans-serif;
+}
+
+.about-hover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 85%;
+    left: 16.75vw;
+    width: 12.5vw;
+    height: 7.5vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: .5vw;
+    font-family: "Ornable", sans-serif;
+    font-size: 1.5vw;
+    color: var(--rose);
+}
+
+.gallery {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    position: absolute;
+    top: 0%;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-image: url("./images/sarah-pf-bg.webp");
+}
+
+.gallery img {
+    height: 100%;
+    width: max-content;
+}
+
+.img-one {
+    position: absolute;
+    z-index: 6;
+}
+
+.img-two {
+    position: absolute;
+    z-index: 5;
+}
+
+.img-three {
+    position: absolute;
+    z-index: 4;
+}
+
+.img-four {
+    position: absolute;
+    z-index: 3;
+}
+
+.img-five {
+    position: absolute;
+    z-index: 2;
+}
+
+.img-six {
+    position: absolute;
+    z-index: 1;
+}
+
+/*WORK*/
+
+.work-section {
+    position: relative;
+    height: 120vh;
+    width: 100vw;
+    overflow: hidden;
+    background-image: url("./images/sarah-pf-bg.webp");
+    background-repeat: repeat-y;
+    background-size: cover;
+    margin-top: 100vh;
+}
+
+.sticky {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("./images/sarah-pf-bg.webp");
+    background-repeat: repeat-y;
+    background-size: cover;
+}
+
+.work-section nav ul {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 25vw;
+    top: 5vh;
+    right: 5vw;
+    z-index: 100;
+    font-family: "Ornable", sans-serif;
+    font-size: 1.5vw;
+}
+
+.work-section nav ul a {
+    color: var(--green);
+    transition: color 0.3s ease-in-out;
+}
+
+.work-section nav ul a:hover {
+    color: var(--rose);
+}
+
+.line-work {
+    position: absolute;
+    width: 40vw;
+    left: 18.5vw;
+    top: 5vh;
+    transform: rotate(180deg);
+    z-index: 100;
+}
+
+.line-work img {
+    width: 40vw;
+}
+
+.hover-click,
+.scroll-ready {
+    position: absolute;
+    width: 14vw;
+    height: 8vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 7.5vh;
+    left: 3.5vw;
+    text-align: center;
+    font-family: "Ornable", sans-serif;
+    font-size: 1.5vw;
+    color: rgb(228, 128, 180, 85%);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 1vw;
+}
+
+.scroll-ready {
+    left: 81.5vw;
+}
+
+.my-works {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.work-no-one,
+.work-no-two,
+.work-no-three,
+.work-no-four,
+.work-no-five,
+.work-no-six {
+    position: absolute;
+    width: 20vw;
+    height: fit-content;
+}
+
+.work-no-one img {
+    width: 100%;
+    height: fit-content;
+    border: .2vw solid var(--red);
+}
+
+.work-no-one img:hover {
+    box-shadow: 0 0px 20px var(--red);
+    cursor: url("./images/flower-click.svg") 10 10, auto;
+    
+}
+
+.work-no-two img {
+    width: 100%;
+    border: .2vw solid var(--green);
+}
+
+.work-no-two img:hover {
+    box-shadow: 0 0px 20px var(--green);
+    cursor: url("./images/flower-click.svg") 10 10, auto;
+}
+
+.work-no-three img,
+.work-no-four img {
+    width: 100%;
+    border: .2vw solid var(--rose);
+}
+
+.work-no-three img:hover,
+.work-no-four img:hover {
+    box-shadow: 0 0px 20px var(--rose);
+    cursor: url("./images/flower-click.svg") 10 10, auto;
+}
+
+.work-no-five img,
+.work-no-six img {
+    width: 100%;
+    border: .2vw solid var(--yellow);
+}
+
+.work-no-five img:hover,
+.work-no-six img:hover {
+    box-shadow: 0 0px 20px var(--yellow);
+    cursor: url("./images/flower-click.svg") 10 10, auto;
+}
+
+.work-no-one:hover,
+.work-no-two:hover,
+.work-no-three:hover,
+.work-no-four:hover,
+.work-no-five:hover,
+.work-no-six:hover {
+    position: absolute;
+    z-index: 20;
+}
+
+/*FOOTER*/
+
+footer {
+    position: relative;
+    margin-top: 100vh;
+    height: 100vh;
+    width: 100vw;
+    background-image: url("./images/sarah-pf-bg.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.footer-name {
+    position: absolute;
+    top: 2.5%;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    z-index: 10;
+    cursor: default;
+}
+
+.footer-name h2 {
+    font-family: "Ornable", sans-serif;
+    font-size: 27.5vw;
+    line-height: 1;
+}
+
+.footer-name h2 span:nth-child(1) {
+    color: var(--yellow);
+    text-shadow: 0 0 5vw var(--yellow);
+}
+
+.footer-name h2 span:nth-child(2),
+.footer-name h2 span:nth-child(5) {
+    color: var(--green);
+    text-shadow: 0 0 5vw var(--green);
+}
+
+.footer-name h2 span:nth-child(3) {
+    color: var(--rose);
+    text-shadow: 0 0 5vw var(--rose);
+}
+
+.footer-name h2 span:nth-child(4) {
+    color: var(--red);
+    text-shadow: 0 0 5vw var(--red);
+}
+
+.socials {
+    position: absolute;
+    bottom: 10%;
+    height: 20vh;
+    width: 35vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    left: 6%;
+    z-index: 1000;
+}
+
+.socials a {
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.socials img {
+    width: 8rem;
+    margin-right: 1vw;
+}
+
+.behance,
+.linkedin {
+    display: flex;
+    flex-direction: row;
+    font-family: "Ornable", sans-serif;
+    font-size: 5vw;
+    align-items: center;
+}
+
+.behance p {
+    color: var(--rose);
+    transition: color 0.3s ease-in-out;
+}
+
+.linkedin p {
+    color: var(--green);
+    transition: color 0.3s ease-in-out;
+}
+
+.logo-footer {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    z-index: 10;
+    animation: spin 5s linear infinite;
+}
+
+.behance-svg {
+    fill: var(--red);
+    transition: fill 0.3s ease-in-out;
+    margin-right: 1vw;
+}
+
+.behance:hover .behance-svg {
+    fill: var(--rose);
+}
+
+.behance:hover p {
+    color: var(--red);
+    cursor: url("./images/flower-click.svg") 10 10, auto;
+}
+
+.linkedin-svg {
+    fill: var(--yellow);
+    transition: fill 0.3s ease-in-out;
+    margin-right: 1vw;
+}
+
+.linkedin:hover .linkedin-svg {
+    fill: var(--green);
+}
+
+.linkedin:hover p {
+    color: var(--yellow);
+    cursor: url("./images/flower-click.svg") 10 10, auto;
+}
