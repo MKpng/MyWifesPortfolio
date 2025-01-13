@@ -330,7 +330,7 @@ nav ul a {
 .about-mobile {
     position: relative;
     width: 100vw;
-    height: 600vh;
+    height: 400vh;
     background-image: url("./images/sarah-pf-bg.webp");
     background-repeat: repeat-y;
     background-size: cover;
@@ -350,6 +350,7 @@ nav ul a {
 
 .about-sticky img {
     height: fit-content;
+    max-height: 60vh;
     width: 80vw;
     border-radius: 5vw;
 }
@@ -585,23 +586,23 @@ nav ul a {
 
 .footer h1 span:nth-child(1) {
     color: var(--yellow);
-    text-shadow: 0 0 5vw var(--yellow);
+    text-shadow: 0 0 2vw var(--yellow);
 }
 
 .footer h1 span:nth-child(2),
 .footer h1 span:nth-child(5) {
     color: var(--green);
-    text-shadow: 0 0 5vw var(--green);
+    text-shadow: 0 0 2vw var(--green);
 }
 
 .footer h1 span:nth-child(3) {
     color: var(--rose);
-    text-shadow: 0 0 5vw var(--rose);
+    text-shadow: 0 0 2vw var(--rose);
 }
 
 .footer h1 span:nth-child(4) {
     color: var(--red);
-    text-shadow: 0 0 5vw var(--red);
+    text-shadow: 0 0 2vw var(--red);
 }
 
 .socials-mobile {
