@@ -59,28 +59,32 @@ function Hero() {
       speed: 0.5,
     });
 
-    gsap.utils.toArray("a").forEach(function (button, i) {
+    gsap.utils.toArray("a").forEach(function (button) {
       button.addEventListener("click", (e) => {
         const anchor = e.target.closest("a"); // Get the closest anchor element
         const href = anchor.getAttribute("href"); // Get the href value
 
         if (href && href.startsWith("#")) {
-          e.preventDefault(); // Prevent default action only for internal hash links
+          e.preventDefault(); // Prevent default browser action for hash links
           console.log(href);
           const targetElement = document.querySelector(href); // Get the target element
           if (targetElement) {
+            // Smooth scroll to the target element
             smoother.scrollTo(targetElement, true, "top top");
+            // Update the URL hash manually
+            window.history.pushState(null, "", href);
           }
         }
       });
     });
 
     window.onload = () => {
-      let urlHash = window.location.href.split("#")[1];
+      const urlHash = window.location.hash; // Get the hash part of the URL
       if (urlHash) {
-        let scrollElem = document.querySelector("#" + urlHash);
+        const scrollElem = document.querySelector(urlHash); // Find the element by the hash
         console.log(scrollElem, urlHash);
         if (scrollElem) {
+          // Use GSAP smoother to scroll to the element
           smoother.scrollTo(scrollElem, true, "top top");
         }
       }
@@ -683,7 +687,11 @@ function Hero() {
             </h2>
           </div>
           <div className="socials">
-            <a href="https://www.behance.net/sarahdasilveira" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://www.behance.net/sarahdasilveira"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <div className="behance">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

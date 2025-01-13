@@ -179,13 +179,11 @@ function Mobile() {
           duration: 0.5,
         },
       });
-      tl.addPause(0.05)
-        .fromTo(
-          ".about-description-mobile",
-          { opacity: 1 },
-          { opacity: 0 },
-          "<0.5"
-        )
+      tl.fromTo(
+        ".about-description-mobile",
+        { opacity: 1 },
+        { opacity: 0 },
+      )
         .fromTo(
           oneRef.current,
           { visibility: "hidden", opacity: 0 },
@@ -196,35 +194,35 @@ function Mobile() {
           twoRef.current,
           { visibility: "hidden", opacity: 0 },
           { visibility: "visible", opacity: 1 },
-          "<0.5"
+          "<0.75"
         )
 
         .fromTo(
           threeRef.current,
           { visibility: "hidden", opacity: 0 },
           { visibility: "visible", opacity: 1 },
-          "<0.5"
+          "<0.75"
         )
 
         .fromTo(
           fourRef.current,
           { visibility: "hidden", opacity: 0 },
           { visibility: "visible", opacity: 1 },
-          "<0.5"
+          "<0.75"
         )
 
         .fromTo(
           fiveRef.current,
           { visibility: "hidden", opacity: 0 },
           { visibility: "visible", opacity: 1 },
-          "<0.5"
+          "<0.75"
         )
 
         .fromTo(
           sixRef.current,
           { visibility: "hidden", opacity: 0 },
           { visibility: "visible", opacity: 1 },
-          "<0.5"
+          "<0.75"
         );
     }, galleryMobile);
     return () => ctx.revert();
@@ -239,7 +237,10 @@ function Mobile() {
       </div>
       <div className="fixed-header">
         <div className="logo-mobile">
-          <button onClick={() => window.location.reload()} aria-label="Reload Page">
+          <button
+            onClick={() => window.location.reload()}
+            aria-label="Reload Page"
+          >
             <img src={logo} alt="Company Logo" />
           </button>
         </div>
@@ -415,7 +416,11 @@ function Mobile() {
               </a>
             </div>
             <div className="work-more">
-              <a href="https://www.behance.net/sarahdasilveira" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://www.behance.net/sarahdasilveira"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 SEE MORE
               </a>
             </div>
@@ -432,7 +437,11 @@ function Mobile() {
               </h1>
             </div>
             <div className="socials-mobile">
-              <a href="https://www.behance.net/sarahdasilveira" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://www.behance.net/sarahdasilveira"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <div className="behance-mobile">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

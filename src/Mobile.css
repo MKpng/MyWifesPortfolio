@@ -341,12 +341,24 @@ nav ul a {
     position: absolute;
     height: 100vh;
     width: 100vw;
-    background-image: url("./images/sarah-pf-bg.webp");
-    background-repeat: no-repeat;
-    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.about-sticky::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("./images/sarah-pf-bg.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transform: rotate(180deg);
+    z-index: -1; /* Push behind content */
 }
 
 .about-sticky img {
@@ -572,10 +584,22 @@ nav ul a {
     position: relative;
     height: 100vh;
     width: 100vw;
+    margin-top: 0vh;
+}
+
+.footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-image: url("./images/sarah-pf-bg.webp");
     background-repeat: no-repeat;
     background-size: cover;
-    margin-top: 0vh;
+    background-position: center;
+    transform: rotate(180deg);
+    z-index: -1; /* Push behind content */
 }
 
 .footer h1 {

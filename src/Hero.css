@@ -635,12 +635,12 @@ footer {
 
 .socials {
     position: absolute;
-    bottom: 10%;
+    top: 60vh;
     height: 20vh;
     width: 35vw;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     left: 6%;
     z-index: 1000;
 }
@@ -676,7 +676,7 @@ footer {
 
 .logo-footer {
     position: absolute;
-    bottom: 5%;
+    top: 62.5vh;
     right: 5%;
     z-index: 10;
 }
