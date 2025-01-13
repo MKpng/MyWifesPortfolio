@@ -46,10 +46,9 @@ function Mobile() {
   );
 
   useEffect(() => {
-    let smoother = ScrollSmoother.create({
-      smooth: 2,
+    let smootherMobile = ScrollSmoother.create({
+      smooth: 1,
       effects: true,
-      normalizeScroll: true,
       smoothTouch: 0.1,
       speed: 0.5,
     });
@@ -64,7 +63,7 @@ function Mobile() {
           console.log(href);
           const targetElement = document.querySelector(href); // Get the target element
           if (targetElement) {
-            smoother.scrollTo(targetElement, true, "top top");
+            smootherMobile.scrollTo(targetElement, true, "top top");
           }
         }
       });
@@ -76,7 +75,7 @@ function Mobile() {
         let scrollElem = document.querySelector("#" + urlHash);
         console.log(scrollElem, urlHash);
         if (scrollElem) {
-          smoother.scrollTo(scrollElem, true, "top top");
+          smootherMobile.scrollTo(scrollElem, true, "top top");
         }
       }
     };

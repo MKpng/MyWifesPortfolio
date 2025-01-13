@@ -579,35 +579,31 @@ nav ul a {
 
 .footer h1 {
     position: absolute;
-    top: 15vh;
+    top: 20vh;
     font-family: "Ornable", sans-serif;
     font-size: 25vw;
 }
 
 .footer h1 span:nth-child(1) {
     color: var(--yellow);
-    text-shadow: 0 0 2vw var(--yellow);
 }
 
 .footer h1 span:nth-child(2),
 .footer h1 span:nth-child(5) {
     color: var(--green);
-    text-shadow: 0 0 2vw var(--green);
 }
 
 .footer h1 span:nth-child(3) {
     color: var(--rose);
-    text-shadow: 0 0 2vw var(--rose);
 }
 
 .footer h1 span:nth-child(4) {
     color: var(--red);
-    text-shadow: 0 0 2vw var(--red);
 }
 
 .socials-mobile {
     position: absolute;
-    top: 50vh;
+    top: 55vh;
     height: 25vh;
     width: 100vw;
     display: flex;
