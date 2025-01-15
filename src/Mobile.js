@@ -53,30 +53,41 @@ function Mobile() {
       speed: 0.5,
     });
 
-    gsap.utils.toArray("a").forEach(function (button, i) {
+    gsap.utils.toArray("a").forEach(function (button) {
       button.addEventListener("click", (e) => {
         const anchor = e.target.closest("a"); // Get the closest anchor element
         const href = anchor.getAttribute("href"); // Get the href value
 
         if (href && href.startsWith("#")) {
-          e.preventDefault(); // Prevent default action only for internal hash links
+          e.preventDefault(); // Prevent default browser action for hash links
           console.log(href);
           const targetElement = document.querySelector(href); // Get the target element
           if (targetElement) {
+            // Smooth scroll to the target element
             smootherMobile.scrollTo(targetElement, true, "top top");
+
+            // Properly construct the relative URL, ensuring no stacking
+            const relativePath = `${window.location.pathname
+              .split("/")
+              .slice(0, -1)
+              .join("/")}${href.replace("#", "/")}`;
+            window.history.pushState(null, "", relativePath);
           }
         }
       });
     });
 
     window.onload = () => {
-      let urlHash = window.location.href.split("#")[1];
-      if (urlHash) {
-        let scrollElem = document.querySelector("#" + urlHash);
-        console.log(scrollElem, urlHash);
-        if (scrollElem) {
-          smootherMobile.scrollTo(scrollElem, true, "top top");
-        }
+      // Check if the URL ends with a section path
+      const sectionPath = window.location.pathname.split("/").pop();
+      if (sectionPath && sectionPath !== "") {
+        const rootPath =
+          window.location.pathname.split("/").slice(0, -1).join("/") || "/";
+        window.history.replaceState(null, "", rootPath); // Update URL to the root
+      }
+      const sectionElement = document.querySelector(`#${sectionPath}`);
+      if (sectionElement) {
+        smootherMobile.scrollTo(sectionElement, true, "top top");
       }
     };
 
@@ -179,11 +190,7 @@ function Mobile() {
           duration: 0.5,
         },
       });
-      tl.fromTo(
-        ".about-description-mobile",
-        { opacity: 1 },
-        { opacity: 0 },
-      )
+      tl.fromTo(".about-description-mobile", { opacity: 1 }, { opacity: 0 })
         .fromTo(
           oneRef.current,
           { visibility: "hidden", opacity: 0 },

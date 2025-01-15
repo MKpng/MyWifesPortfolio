@@ -37,10 +37,6 @@ function Hero() {
   const work = useRef(null);
   const transictionOne = useRef(null);
 
-  window.onbeforeunload = function () {
-    window.scrollTo(0, 0);
-  };
-
   gsap.registerPlugin(
     ScrollTrigger,
     ScrollToPlugin,
@@ -71,28 +67,34 @@ function Hero() {
           if (targetElement) {
             // Smooth scroll to the target element
             smoother.scrollTo(targetElement, true, "top top");
-            // Update the URL hash manually
-            window.history.pushState(null, "", href);
+
+            // Properly construct the relative URL, ensuring no stacking
+            const relativePath = `${window.location.pathname
+              .split("/")
+              .slice(0, -1)
+              .join("/")}${href.replace("#", "/")}`;
+            window.history.pushState(null, "", relativePath);
           }
         }
       });
     });
 
     window.onload = () => {
-      const urlHash = window.location.hash; // Get the hash part of the URL
-      if (urlHash) {
-        const scrollElem = document.querySelector(urlHash); // Find the element by the hash
-        console.log(scrollElem, urlHash);
-        if (scrollElem) {
-          // Use GSAP smoother to scroll to the element
-          smoother.scrollTo(scrollElem, true, "top top");
-        }
+      // Check if the URL ends with a section path
+      const sectionPath = window.location.pathname.split("/").pop();
+      if (sectionPath && sectionPath !== "") {
+        const rootPath =
+          window.location.pathname.split("/").slice(0, -1).join("/") || "/";
+        window.history.replaceState(null, "", rootPath); // Update URL to the root
+      }
+      const sectionElement = document.querySelector(`#${sectionPath}`);
+      if (sectionElement) {
+        smoother.scrollTo(sectionElement, true, "top top");
       }
     };
   }, []);
 
   useLayoutEffect(() => {
-    // Heartbeat animation for the logo loader
     const heartbeat = gsap.to(".logo-loader", {
       scale: 0.8,
       duration: 0.5,
@@ -105,8 +107,6 @@ function Hero() {
     // Reference to ScrollSmoother instance (if used)
     const smoother = ScrollSmoother.get();
     if (smoother) smoother.paused(true); // Pause ScrollSmoother
-
-    // Prevent scrolling on body
     document.body.style.overflow = "hidden";
     document.body.style.position = "fixed";
 
@@ -127,8 +127,20 @@ function Hero() {
         { scale: 1, opacity: 1 },
         { scale: 0.33, ease: "power2.inOut", opacity: 0, duration: 1, delay: 3 }
       )
-        .call(() => heartbeat.kill()) // Kill the heartbeat animation
-        .fromTo(".loader", { opacity: 1 }, { display: "none", opacity: 0 })
+        .call(() => heartbeat.kill())
+        .fromTo(
+          ".loader",
+          { opacity: 1 },
+          {
+            display: "none",
+            opacity: 0,
+            onComplete: () => {
+              document.body.style.overflow = ""; // Restore scrolling
+              document.body.style.position = ""; // Reset position
+              if (smoother) smoother.paused(false); // Resume ScrollSmoother
+            },
+          }
+        )
         .fromTo(
           ".myName h1 span:nth-child(1)",
           { opacity: 0, css: { textShadow: "0px 0px 0px rgba(0, 0, 0, 0)" } },
@@ -205,7 +217,6 @@ function Hero() {
         .fromTo(".logo", { x: "-100vw" }, { x: 0, duration: 0.5 }, "-=.8")
         .fromTo(
           ".myName h1 span:nth-child(1)",
-
           {
             css: {
               textShadow:
