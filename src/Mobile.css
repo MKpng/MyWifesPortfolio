@@ -536,30 +536,30 @@ nav ul a {
 }
 
 .work-list-one {
-    background-image: url("./images/esteves-SP.webp");
+    background-image: url("./images/silveirinha.webp");
     background-position: center;
-    background-size: cover;
+    background-size: contain;
     border: 1vw solid var(--yellow);
 }
 
 .work-list-two {
-    background-image: url("./images/tabuleiro-SP.webp");
+    background-image: url("./images/oceanzinho.webp");
     background-position: bottom;
-    background-size: cover;
+    background-size: contain;
     border: 1vw solid var(--green);
 }
 
 .work-list-three {
-    background-image: url("./images/atharax-SP.webp");
+    background-image: url("./images/atharaxinho.webp");
     background-position: 45% 50%;
-    background-size: 180%;
+    background-size: contain;
     border: 1vw solid var(--rose);
 }
 
 .work-list-four {
-    background-image: url("./images/house-SP.webp");
-    background-position: 50% 70%;
-    background-size: cover;
+    background-image: url("./images/creative.webp");
+    background-position: center;
+    background-size: contain;
     border: 1vw solid var(--red);
 }
 

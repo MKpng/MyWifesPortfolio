@@ -18,12 +18,12 @@ import three from "./images/3.webp";
 import four from "./images/4.webp";
 import five from "./images/5.webp";
 import six from "./images/6.webp";
-import tabuleiro from "./images/tabuleiro-SP.webp";
-import atharax from "./images/atharax-SP.webp";
-import esteves from "./images/esteves-SP.webp";
-import house from "./images/house-SP.webp";
-import organica from "./images/organica-SP.webp";
-import pod from "./images/pod-SP.webp";
+import tabuleiro from "./images/oceanzinho.webp";
+import atharax from "./images/atharaxinho.webp";
+import creative from "./images/creative.webp";
+import rightword from "./images/rightword.webp";
+import silveira from "./images/silveirinha.webp";
+import bk from "./images/bkzinho.webp";
 
 function Hero() {
   const gallery = useRef(null);
@@ -639,7 +639,7 @@ function Hero() {
                 </div>
                 <div className="work-no-two">
                   <a
-                    href="https://www.behance.net/gallery/215976293/ATHARAX"
+                    href="https://www.behance.net/gallery/219369847/ATHARAX"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -648,38 +648,38 @@ function Hero() {
                 </div>
                 <div className="work-no-three">
                   <a
-                    href="https://www.behance.net/gallery/215975463/ESTEVES-CORRETORA"
+                    href="https://www.behance.net/gallery/219431873/SILVEIRA-GESTAO"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <img src={esteves} alt=""></img>
+                    <img src={silveira} alt=""></img>
                   </a>
                 </div>
                 <div className="work-no-four">
                   <a
-                    href="https://www.behance.net/gallery/199036633/ORGANICOS-HP"
+                    href="https://www.behance.net/gallery/198773237/CREATIVE-MINDS"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <img src={house} alt=""></img>
+                    <img src={creative} alt=""></img>
                   </a>
                 </div>
                 <div className="work-no-five">
                   <a
-                    href="https://www.behance.net/gallery/215974969/ORGANICA"
+                    href="https://www.behance.net/gallery/219228007/BK-OPEN"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <img src={organica} alt=""></img>
+                    <img src={bk} alt=""></img>
                   </a>
                 </div>
                 <div className="work-no-six">
                   <a
-                    href="https://www.behance.net/gallery/197400193/ADS-POD-KOMBUCHA"
+                    href="https://www.behance.net/gallery/219228473/RIGHTWORD"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <img src={pod} alt=""></img>
+                    <img src={rightword} alt=""></img>
                   </a>
                 </div>
               </div>

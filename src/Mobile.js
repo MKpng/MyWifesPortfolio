@@ -33,10 +33,6 @@ function Mobile() {
     setIsOpened((prevState) => !prevState); // Toggle the state
   };
 
-  window.onbeforeunload = function () {
-    window.scrollTo(0, 0);
-  };
-
   gsap.registerPlugin(
     ScrollTrigger,
     ScrollToPlugin,
@@ -394,7 +390,7 @@ function Mobile() {
             </div>
             <div className="work-list">
               <a
-                href="https://www.behance.net/gallery/215975463/ESTEVES-CORRETORA"
+                href="https://www.behance.net/gallery/219431873/SILVEIRA-GESTAO"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -408,14 +404,14 @@ function Mobile() {
                 <div className="work-list-two"></div>
               </a>
               <a
-                href="https://www.behance.net/gallery/215976293/ATHARAX"
+                href="https://www.behance.net/gallery/219369847/ATHARAX"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <div className="work-list-three"></div>
               </a>
               <a
-                href="https://www.behance.net/gallery/199036633/ORGANICOS-HP"
+                href="https://www.behance.net/gallery/198773237/CREATIVE-MINDS"
                 target="_blank"
                 rel="noopener noreferrer"
               >
