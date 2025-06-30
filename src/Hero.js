@@ -536,7 +536,7 @@ function Hero() {
                   <span>r</span>
                   <span>a</span>
                   <span>h</span>,
-                  <br />a <span className="one">Mid-level</span>
+                  <br />a <span className="one">Mid-level Designer</span>
                   <br />
                   with over <span className="two">4 </span>
                   <span className="three">years </span>
